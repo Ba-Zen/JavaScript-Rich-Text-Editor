@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rich text editor in JavaScript</title>
+    <script
+      src="https://kit.fontawesome.com/452898e6ae.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="enableEditMode();">
+    <div>
+      <button onclick="execCmd('bold');"><i class="fas fa-bold"></i></button>
+    </div>
+    <iframe name="richTextField" style="width: 1000px; height: 500px;"></iframe>
+    <script type="text/javascript">
+      function enableEditMode() {
+        richTextField.document.designMode = 'On';
+      }
+      function execCmd(command) {
+        richTextField.document.execCommand(command, false, null);
+      }
+    </script>
+  </body>
+</html>
